@@ -13,8 +13,6 @@ jobs:
       run: bundle install
     - name: Pod install
       run: bundle exec pod install
-    - name: SwiftLint
-      run: ./Pods/SwiftLint/swiftlint
     - name: Danger
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

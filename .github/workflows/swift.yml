@@ -1,0 +1,19 @@
+name: Swift
+
+on: pull_request
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Danger
+      run: bundle install
+    - name: Pod install
+      run: bundle exec pod install
+    - name: Danger
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: bundle exec danger

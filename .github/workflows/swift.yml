@@ -12,4 +12,6 @@ jobs:
     - name: Install Danger
       run: bundle install
     - name: Danger
-      run: bundle exec danger
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bundle exec danger

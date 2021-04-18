@@ -15,6 +15,6 @@ jobs:
       - image: 41772ki/swift-mint
     steps:
       - checkout
-      - run: mint install realm/SwiftLint@0.40.3
+      - run: docker run -it 41772ki/swift-mint mint install realm/SwiftLint@0.40.3
       - run: bundle install
       - run: bundle exec danger

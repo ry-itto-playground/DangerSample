@@ -14,7 +14,8 @@ jobs:
       - image: circleci/ruby:2.7.2
       - image: 41772ki/swift-mint
     steps:
-      - checkout
+      - setup_remote_docker
       - run: docker run -it 41772ki/swift-mint mint install realm/SwiftLint@0.40.3
+      - checkout
       - run: bundle install
       - run: bundle exec danger

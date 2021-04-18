@@ -4,7 +4,7 @@ gems_persist_key: &gems_persist_key
   key: v0-gems-{{ checksum "Gemfile.lock" }}
 
 workflows:
-  - review:
+  review:
     jobs:
       - danger
 

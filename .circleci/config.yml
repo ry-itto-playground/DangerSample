@@ -12,7 +12,9 @@ jobs:
   danger:
     docker:
       - image: circleci/ruby:2.7.2
+      - image: 41772ki/swift-mint
     steps:
       - checkout
+      - run: mint install realm/SwiftLint@0.40.3
       - run: bundle install
       - run: bundle exec danger

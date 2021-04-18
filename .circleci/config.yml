@@ -9,9 +9,5 @@ jobs:
       - image: circleci/ruby:2.7.2
     steps:
       - checkout
-      - run:
-        name: Bundle install
-        command: bundle install
-      - run:
-        name: Run Danger
-        command: bundle exec danger
+      - run: bundle install
+      - run: bundle exec danger

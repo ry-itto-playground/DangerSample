@@ -5,13 +5,13 @@ on: pull_request
 jobs:
   build:
 
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install Danger
-      run: bundle install
     - name: Danger
+      uses: ghcr.io/danger/danger-swift-with-swiftlint:3.10.0
+      with:
+        args: --failOnErrors --no-publish-check
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: bundle exec danger
